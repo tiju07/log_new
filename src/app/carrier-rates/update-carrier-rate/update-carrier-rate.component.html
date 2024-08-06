@@ -1,0 +1,173 @@
+<span class="title">Update</span>
+<div class="demo-page">
+  <main class="demo-page-content">
+    <section>
+      <div class="nice-form-group">
+        <label>ID</label>
+        <input pInputText readonly [value]="id" />
+      </div>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="nice-form-group">
+          <label for="carrier">Carrier</label>
+          <select
+            id="carrier"
+            formControlName="carrier"
+            [ngClass]="{
+              'invalid-input':
+                myForm.get('carrier')?.hasError('invalidInput') &&
+                myForm.get('carrier')?.touched
+            }"
+          >
+            <option value="" disabled>Please select a value</option>
+            <option *ngFor="let carrier of carriers" [value]="carrier">
+              {{ carrier }}
+            </option>
+          </select>
+        </div>
+        <div class="nice-form-group">
+          <label for="charge">Charge</label>
+          <select
+            id="charge"
+            formControlName="charge"
+            [ngClass]="{
+              'invalid-input':
+                myForm.get('charge')?.hasError('invalidInput') &&
+                myForm.get('charge')?.touched
+            }"
+          >
+            <option value="" disabled>Select a charge</option>
+            <option *ngFor="let charge of charges" [value]="charge">
+              {{ charge }}
+            </option>
+          </select>
+        </div>
+        <div class="nice-form-group">
+          <label for="currency">Currency</label>
+          <select
+            id="currency"
+            formControlName="currency"
+            [ngClass]="{
+              'invalid-input':
+                myForm.get('currency')?.hasError('invalidInput') &&
+                myForm.get('currency')?.touched
+            }"
+          >
+            <option value="" disabled>Select a currency</option>
+            <option *ngFor="let currency of currencies" [value]="currency">
+              {{ currency }}
+            </option>
+          </select>
+        </div>
+        <div class="nice-form-group">
+          <label for="unit">Unit</label>
+          <input id="unit" type="text" formControlName="unit" />
+        </div>
+        <div class="nice-form-group">
+          <label for="measurementType">Measurement Type</label>
+          <input
+            id="measurementType"
+            type="text"
+            formControlName="measurementType"
+          />
+        </div>
+        <div class="nice-form-group">
+          <label for="origin">Origin</label>
+          <input id="origin" type="text" formControlName="origin" />
+        </div>
+        <div class="nice-form-group">
+          <label for="destination">Destination</label>
+          <input id="destination" type="text" formControlName="destination" />
+        </div>
+        <div class="nice-form-group">
+          <label for="fdcSector">FDC Sector</label>
+          <input id="fdcSector" type="text" formControlName="fdcSector" />
+        </div>
+        <div class="row gap-2 d-flex flex-row align-items-end">
+          <div class="nice-form-group col">
+            <label for="firstEffectiveFrom">First Effective From</label>
+            <input
+              id="firstEffectiveFrom"
+              class="w-full"
+              type="date"
+              pInputText
+              formControlName="firstEffectiveFrom"
+            />
+          </div>
+          <div class="nice-form-group col">
+            <label for="fefdAmount">First Effective From - Amount</label>
+            <p-inputGroup>
+              <p-inputGroupAddon>$</p-inputGroupAddon>
+              <input
+                id="fefdAmount"
+                class="w-full"
+                type="number"
+                min="1"
+                pInputText
+                formControlName="fefdAmount"
+              />
+            </p-inputGroup>
+          </div>
+          <div class="nice-form-group col">
+            <label for="fefdMinimumAmount"
+              >First Effective From - Minimum Amount</label
+            >
+            <input
+              id="fefdMinimumAmount"
+              class="w-full"
+              type="number"
+              min="1"
+              formControlName="fefdMinimumAmount"
+            />
+          </div>
+        </div>
+        <div class="row gap-2 d-flex flex-row align-items-end">
+          <div class="nice-form-group col">
+            <label for="secondEffectiveFrom">Second Effective From</label>
+            <input
+              id="secondEffectiveFrom"
+              type="date"
+              class="w-full"
+              formControlName="secondEffectiveFrom"
+            />
+          </div>
+          <div class="nice-form-group col">
+            <label for="sefdAmount">Second Effective From - Amount</label>
+            <input
+              id="sefdAmount"
+              type="number"
+              min="1"
+              class="w-full"
+              formControlName="sefdAmount"
+            />
+          </div>
+          <div class="nice-form-group col">
+            <label for="sefdMinimumAmount"
+              >Second Effective From - Minimum Amount</label
+            >
+            <input
+              id="sefdMinimumAmount"
+              type="number"
+              min="1"
+              class="w-full"
+              formControlName="sefdMinimumAmount"
+            />
+          </div>
+        </div>
+        <details>
+          <summary>
+            <div class="d-flex flex-row justify-content-center">
+              <button
+                class="btn btn-success w-full"
+                type="submit"
+                disabled="{{ myForm.errors != null }}"
+              >
+                Create
+              </button>
+            </div>
+          </summary>
+        </details>
+      </form>
+    </section>
+    <footer>Made with ♥ for CSS</footer>
+  </main>
+</div>

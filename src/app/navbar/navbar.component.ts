@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { UtilsService } from '../services/utils.service';
 
 @Component({
@@ -12,5 +12,16 @@ export class NavbarComponent {
     toggleSidebar() {
         this.utils.sidebarVisible.next(true);
         console.log('Changed!');
+    }
+
+
+
+    @HostListener('document:mouseover', ['$event'])
+    onMouseOver(event: MouseEvent) {
+        const targetElement = event.target as Element;
+        if (targetElement.classList.contains("p-button")) {
+            console.log("Clicked!");
+            this.toggleSidebar();
+        }
     }
 }

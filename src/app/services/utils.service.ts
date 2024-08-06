@@ -8,5 +8,5 @@ export class UtilsService {
 
     constructor() { }
 
-    sidebarVisible: BehaviorSubject<boolean> = new BehaviorSubject(false);
+    sidebarVisible: BehaviorSubject<boolean> = new BehaviorSubject(true);
 }

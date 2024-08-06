@@ -543,6 +543,7 @@ table {
 
 .nice-form-group>input[type='range'] {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     cursor: pointer;
 }

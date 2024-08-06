@@ -5,3 +5,14 @@ and also import other style files  */
 @import 'primeng/resources/themes/lara-light-blue/theme.css';
 @import 'primeflex/primeflex.css';
 @import 'assets/css/bootstrap.css';
+
+body {
+    padding-top: 3rem;
+    background-color: #f9fafb;
+}
+
+* {
+    font-family: "Inter var", sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-variation-settings: normal;
+}

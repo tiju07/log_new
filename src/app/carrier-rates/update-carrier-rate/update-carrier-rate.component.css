@@ -15,14 +15,19 @@ ul {
 }
 
 .title {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    background-color: #0d6efd;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
     font-size: 2rem;
     font-weight: 600;
-    text-transform: capitalize;
     margin: 0 auto;
-    display: flex;
     max-width: 26.5em;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 15px 20px 3px rgba(255, 255, 255, 0.2), inset 0 4px 6px -2px rgba(255, 255, 255, 0.2);
+
 }
 
 @media only screen and (min-width: 750px) {
