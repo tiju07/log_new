@@ -17,6 +17,7 @@ export class UpdateCarrierRateComponent {
     constructor(private fb: FormBuilder, private route: ActivatedRoute) { }
     ngOnInit(): void {
         this.myForm = this.fb.group({
+            data: ["Data"],
             carrier: ["", [Validators.required, selectFieldValidator()]],
             charge: ["", [Validators.required, selectFieldValidator()]],
             currency: ["", [Validators.required, selectFieldValidator()]],

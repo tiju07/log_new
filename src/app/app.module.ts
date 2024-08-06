@@ -18,7 +18,7 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
-
+import { InplaceModule } from 'primeng/inplace';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +27,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CreateCarrierRateComponent } from './carrier-rates/create-carrier-rate/create-carrier-rate.component';
 import { UpdateCarrierRateComponent } from './carrier-rates/update-carrier-rate/update-carrier-rate.component';
 import { ViewAllCarrierRatesComponent } from './carrier-rates/view-all-carrier-rates/view-all-carrier-rates.component';
+import { ViewSingleCarrierRateComponent } from './carrier-rates/view-single-carrier-rate/view-single-carrier-rate.component';
 
 
 
@@ -37,7 +38,8 @@ import { ViewAllCarrierRatesComponent } from './carrier-rates/view-all-carrier-r
         SidebarComponent,
         CreateCarrierRateComponent,
         UpdateCarrierRateComponent,
-        ViewAllCarrierRatesComponent
+        ViewAllCarrierRatesComponent,
+        ViewSingleCarrierRateComponent
     ],
     imports: [
         BrowserModule,
@@ -58,7 +60,8 @@ import { ViewAllCarrierRatesComponent } from './carrier-rates/view-all-carrier-r
         InputGroupAddonModule,
         BreadcrumbModule,
         TableModule,
-        MultiSelectModule
+        MultiSelectModule,
+        InplaceModule
     ],
     providers: [
         provideClientHydration()
