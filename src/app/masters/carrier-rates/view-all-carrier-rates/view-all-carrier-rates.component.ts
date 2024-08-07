@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CarrierRate } from '../../interfaces/carrier-rate';
-import { CarrierRatesService } from '../../services/carrier-rates.service';
-import { Column } from '../../interfaces/column';
+import { CarrierRate } from '../../../interfaces/carrier-rate';
+import { CarrierRatesService } from '../../../services/carrier-rates.service';
+import { Column } from '../../../interfaces/column';
 
 @Component({
     selector: 'app-view-all-carrier-rates',

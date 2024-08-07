@@ -19,15 +19,19 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InplaceModule } from 'primeng/inplace';
+import { ContextMenuModule } from 'primeng/contextmenu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { CreateCarrierRateComponent } from './carrier-rates/create-carrier-rate/create-carrier-rate.component';
-import { UpdateCarrierRateComponent } from './carrier-rates/update-carrier-rate/update-carrier-rate.component';
-import { ViewAllCarrierRatesComponent } from './carrier-rates/view-all-carrier-rates/view-all-carrier-rates.component';
-import { ViewSingleCarrierRateComponent } from './carrier-rates/view-single-carrier-rate/view-single-carrier-rate.component';
+import { CreateCarrierRateComponent } from './masters/carrier-rates/create-carrier-rate/create-carrier-rate.component';
+import { UpdateCarrierRateComponent } from './masters/carrier-rates/update-carrier-rate/update-carrier-rate.component';
+import { ViewAllCarrierRatesComponent } from './masters/carrier-rates/view-all-carrier-rates/view-all-carrier-rates.component';
+import { ViewSingleCarrierRateComponent } from './masters/carrier-rates/view-single-carrier-rate/view-single-carrier-rate.component';
+import { CreateActionComponent } from './masters/actions/create-action/create-action.component';
+import { UpdateActionComponent } from './masters/actions/update-action/update-action.component';
+import { ViewAllActionsComponent } from './masters/actions/view-all-actions/view-all-actions.component';
 
 
 
@@ -39,7 +43,10 @@ import { ViewSingleCarrierRateComponent } from './carrier-rates/view-single-carr
         CreateCarrierRateComponent,
         UpdateCarrierRateComponent,
         ViewAllCarrierRatesComponent,
-        ViewSingleCarrierRateComponent
+        ViewSingleCarrierRateComponent,
+        CreateActionComponent,
+        UpdateActionComponent,
+        ViewAllActionsComponent
     ],
     imports: [
         BrowserModule,
@@ -61,7 +68,8 @@ import { ViewSingleCarrierRateComponent } from './carrier-rates/view-single-carr
         BreadcrumbModule,
         TableModule,
         MultiSelectModule,
-        InplaceModule
+        InplaceModule,
+        ContextMenuModule
     ],
     providers: [
         provideClientHydration()

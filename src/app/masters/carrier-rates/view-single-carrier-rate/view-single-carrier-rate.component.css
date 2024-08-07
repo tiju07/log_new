@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css');
-@import '../../../assets/css/form-styles.css';
+@import '../../../../assets/css/form-styles.css';
 
 .demo-page {
     font-size: medium !important;

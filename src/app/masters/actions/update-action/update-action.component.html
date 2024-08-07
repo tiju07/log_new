@@ -1,0 +1,52 @@
+<span class="title">Update</span>
+<div class="demo-page">
+  <main class="demo-page-content">
+    <section>
+      <form [formGroup]="createActionForm" (ngSubmit)="onSubmit()">
+        <div class="nice-form-group">
+          <label for="name">Name</label>
+          <small>Name for the action</small>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            [ngClass]="{
+              'invalid-input':
+                createActionForm.get('name')?.hasError('required') &&
+                createActionForm.get('name')?.touched
+            }"
+          />
+        </div>
+        <div class="nice-form-group">
+          <label for="followUpDays">Follow Up Days</label>
+          <input
+            id="followUpDays"
+            type="number"
+            formControlName="followUpDays"
+          />
+        </div>
+        <div class="nice-form-group">
+          <label for="type">Type</label>
+          <input id="type" type="text" formControlName="type" />
+        </div>
+        <div class="nice-form-group">
+          <label for="note">Note</label>
+          <input id="note" type="text" formControlName="note" />
+        </div>
+        <details>
+          <summary>
+            <div class="d-flex flex-row justify-content-center">
+              <button
+                class="btn btn-success w-full"
+                type="submit"
+                disabled="{{ createActionForm.errors != null }}"
+              >
+                Create
+              </button>
+            </div>
+          </summary>
+        </details>
+      </form>
+    </section>
+  </main>
+</div>

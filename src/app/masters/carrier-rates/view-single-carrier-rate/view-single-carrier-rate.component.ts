@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CarrierRatesService } from '../../services/carrier-rates.service';
-import { CarrierRate } from '../../interfaces/carrier-rate';
+import { CarrierRatesService } from '../../../services/carrier-rates.service';
+import { CarrierRate } from '../../../interfaces/carrier-rate';
 
 @Component({
     selector: 'app-view-single-carrier-rate',
