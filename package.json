@@ -23,6 +23,7 @@
         "@angular/ssr": "^17.1.3",
         "bootstrap": "^5.3.3",
         "express": "^4.18.2",
+        "feather-icons": "^4.29.2",
         "logistics": "file:",
         "primeflex": "^3.3.1",
         "primeicons": "^7.0.0",

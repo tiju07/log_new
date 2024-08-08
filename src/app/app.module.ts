@@ -20,6 +20,7 @@ import { TableModule } from 'primeng/table';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { InplaceModule } from 'primeng/inplace';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { StepperModule } from 'primeng/stepper';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { ViewSingleCarrierRateComponent } from './masters/carrier-rates/view-sin
 import { CreateActionComponent } from './masters/actions/create-action/create-action.component';
 import { UpdateActionComponent } from './masters/actions/update-action/update-action.component';
 import { ViewAllActionsComponent } from './masters/actions/view-all-actions/view-all-actions.component';
+import { CreateAgentComponent } from './masters/agents/create-agent/create-agent.component';
 
 
 
@@ -46,7 +48,8 @@ import { ViewAllActionsComponent } from './masters/actions/view-all-actions/view
         ViewSingleCarrierRateComponent,
         CreateActionComponent,
         UpdateActionComponent,
-        ViewAllActionsComponent
+        ViewAllActionsComponent,
+        CreateAgentComponent
     ],
     imports: [
         BrowserModule,
@@ -69,7 +72,8 @@ import { ViewAllActionsComponent } from './masters/actions/view-all-actions/view
         TableModule,
         MultiSelectModule,
         InplaceModule,
-        ContextMenuModule
+        ContextMenuModule,
+        StepperModule
     ],
     providers: [
         provideClientHydration()

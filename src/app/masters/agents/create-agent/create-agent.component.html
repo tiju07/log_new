@@ -1,0 +1,244 @@
+<span class="title">Create</span>
+
+<div class="flex justify-content-center p-3 card">
+  <p-stepper>
+    <p-stepperPanel header="Agent Details">
+      <ng-template
+        pTemplate="content"
+        let-nextCallback="nextCallback"
+        let-index="index"
+      >
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <form
+                [formGroup]="createAgentForm_AgentDetails"
+                (ngSubmit)="onSubmit()"
+              >
+                <div class="nice-form-group">
+                  <label for="name">Name</label>
+                  <small>Name for the action</small>
+                  <input
+                    id="name"
+                    type="text"
+                    formControlName="name"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('name')
+                          ?.hasError('required') &&
+                        createAgentForm_AgentDetails.get('name')?.touched
+                    }"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="country">Country</label>
+                  <select
+                    id="country"
+                    formControlName="country"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('country')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentDetails.get('country')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option *ngFor="let country of countries" [value]="country">
+                      {{ country }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="group">Group</label>
+                  <select
+                    id="group"
+                    formControlName="group"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('group')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentDetails.get('group')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option *ngFor="let group of groups" [value]="group">
+                      {{ group }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="nice-form-group">
+                  <label for="address">Address</label>
+                  <textarea
+                    id="address"
+                    type="text"
+                    formControlName="address"
+                  ></textarea>
+                </div>
+                <div class="nice-form-group">
+                  <label for="buyerConsolidationName"
+                    >Buyer Consolidation Name</label
+                  >
+                  <input
+                    id="buyerConsolidationName"
+                    type="text"
+                    formControlName="buyerConsolidationName"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="ourOffice">Our Office</label>
+                  <input
+                    id="ourOffice"
+                    type="text"
+                    formControlName="ourOffice"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="profitShare">Profit Share</label>
+                  <input
+                    id="profitShare"
+                    type="number"
+                    formControlName="profitShare"
+                    class="icon-right"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="incomeTaxPAN">Income Tax PAN</label>
+                  <input
+                    id="incomeTaxPAN"
+                    type="text"
+                    formControlName="incomeTaxPAN"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="billingSubledger">Billing Subledger</label>
+                  <input
+                    id="billingSubledger"
+                    type="text"
+                    formControlName="billingSubledger"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="visibility">Visibility</label>
+                  <input
+                    id="visibility"
+                    type="text"
+                    formControlName="visibility"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="termCode">Term Code</label>
+                  <input id="termCode" type="text" formControlName="termCode" />
+                </div>
+                <div class="nice-form-group">
+                  <label for="agentType">Agent Type</label>
+                  <select
+                    id="agentType"
+                    formControlName="agentType"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('agentType')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentDetails.get('agentType')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let agentType of agentTypes"
+                      [value]="agentType"
+                    >
+                      {{ agentType }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="agreement">Agreement</label>
+                  <input
+                    id="agreement"
+                    type="text"
+                    formControlName="agreement"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="wca">WCA</label>
+                  <input id="wca" type="text" formControlName="wca" />
+                </div>
+                <div class="nice-form-group">
+                  <label for="wcanumber">WCA Number</label>
+                  <input
+                    id="wcanumber"
+                    type="text"
+                    formControlName="wcanumber"
+                  />
+                </div>
+              </form>
+            </section>
+          </main>
+        </div>
+        <div class="flex pt-4 justify-content-end">
+          <p-button
+            label="Next"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            (onClick)="nextCallback.emit()"
+          />
+        </div>
+      </ng-template>
+    </p-stepperPanel>
+    <p-stepperPanel header="Account Details">
+      <ng-template
+        pTemplate="content"
+        let-prevCallback="prevCallback"
+        let-nextCallback="nextCallback"
+        let-index="index"
+      >
+        <div class="flex flex-column h-12rem">
+          <div
+            class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+          >
+            Content II
+          </div>
+        </div>
+        <div class="flex pt-4 justify-content-between">
+          <p-button
+            label="Back"
+            icon="pi pi-arrow-left"
+            (onClick)="prevCallback.emit()"
+          />
+          <p-button
+            label="Next"
+            icon="pi pi-arrow-right"
+            iconPos="right"
+            (onClick)="nextCallback.emit()"
+          />
+        </div>
+      </ng-template>
+    </p-stepperPanel>
+    <p-stepperPanel header="Segment Details">
+      <ng-template
+        pTemplate="content"
+        let-prevCallback="prevCallback"
+        let-index="index"
+      >
+        <div class="flex flex-column h-12rem">
+          <div
+            class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium"
+          >
+            Content III
+          </div>
+        </div>
+        <div class="flex pt-4 justify-content-start">
+          <p-button
+            label="Back"
+            icon="pi pi-arrow-left"
+            (onClick)="prevCallback.emit()"
+          />
+        </div>
+      </ng-template>
+    </p-stepperPanel>
+  </p-stepper>
+</div>
