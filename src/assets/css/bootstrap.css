@@ -329,7 +329,7 @@ ol,
 ul,
 dl {
     margin-top: 0;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 ol ol,
@@ -385,10 +385,10 @@ sup {
     top: -0.5em;
 }
 
-a {
+/* a {
     color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-    /* text-decoration: underline; */
-}
+    text-decoration: underline;
+} */
 
 a:hover {
     --bs-link-color-rgb: var(--bs-link-hover-color-rgb);

@@ -8,6 +8,7 @@ import { CreateActionComponent } from './masters/actions/create-action/create-ac
 import { UpdateActionComponent } from './masters/actions/update-action/update-action.component';
 import { ViewAllActionsComponent } from './masters/actions/view-all-actions/view-all-actions.component';
 import { CreateAgentComponent } from './masters/agents/create-agent/create-agent.component';
+import { UpdateAgentComponent } from './masters/agents/update-agent/update-agent.component';
 
 const routes: Routes = [
     { path: 'carrier-rates', component: ViewAllCarrierRatesComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'actions/create', component: CreateActionComponent },
     { path: 'actions/update/:id', component: UpdateActionComponent },
     { path: 'agents/create', component: CreateAgentComponent },
+    { path: 'agents/update/:id', component: UpdateAgentComponent },
     { path: "**", redirectTo: "", pathMatch: "full" }
 ];
 

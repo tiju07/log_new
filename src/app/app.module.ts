@@ -21,6 +21,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { InplaceModule } from 'primeng/inplace';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { StepperModule } from 'primeng/stepper';
+import { TabViewModule } from 'primeng/tabview';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +36,8 @@ import { CreateActionComponent } from './masters/actions/create-action/create-ac
 import { UpdateActionComponent } from './masters/actions/update-action/update-action.component';
 import { ViewAllActionsComponent } from './masters/actions/view-all-actions/view-all-actions.component';
 import { CreateAgentComponent } from './masters/agents/create-agent/create-agent.component';
+import { UpdateAgentComponent } from './masters/agents/update-agent/update-agent.component';
+import { ViewAllAgentsComponent } from './masters/agents/view-all-agents/view-all-agents.component';
 
 
 
@@ -49,7 +53,9 @@ import { CreateAgentComponent } from './masters/agents/create-agent/create-agent
         CreateActionComponent,
         UpdateActionComponent,
         ViewAllActionsComponent,
-        CreateAgentComponent
+        CreateAgentComponent,
+        UpdateAgentComponent,
+        ViewAllAgentsComponent
     ],
     imports: [
         BrowserModule,
@@ -73,7 +79,8 @@ import { CreateAgentComponent } from './masters/agents/create-agent/create-agent
         MultiSelectModule,
         InplaceModule,
         ContextMenuModule,
-        StepperModule
+        StepperModule,
+        TabViewModule
     ],
     providers: [
         provideClientHydration()

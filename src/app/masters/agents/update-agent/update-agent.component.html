@@ -1,0 +1,807 @@
+<div class="flex justify-content-center p-3 card">
+  <div class="card">
+    <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
+      <p-tabPanel header="Agent Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form
+              [formGroup]="createAgentForm_AgentDetails"
+              (ngSubmit)="onSubmit()"
+            >
+              <section>
+                <div class="nice-form-group">
+                  <label for="name">Name</label>
+                  <small>Name for the action</small>
+                  <input
+                    id="name"
+                    type="text"
+                    formControlName="name"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('name')
+                          ?.hasError('required') &&
+                        createAgentForm_AgentDetails.get('name')?.touched
+                    }"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="country">Country</label>
+                  <select
+                    id="country"
+                    formControlName="country"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('country')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentDetails.get('country')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option *ngFor="let country of countries" [value]="country">
+                      {{ country }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="group">Group</label>
+                  <select
+                    id="group"
+                    formControlName="group"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('group')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentDetails.get('group')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option *ngFor="let group of groups" [value]="group">
+                      {{ group }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="nice-form-group">
+                  <label for="address">Address</label>
+                  <textarea
+                    id="address"
+                    type="text"
+                    formControlName="address"
+                  ></textarea>
+                </div>
+                <div class="nice-form-group">
+                  <label for="buyerConsolidationName"
+                    >Buyer Consolidation Name</label
+                  >
+                  <input
+                    id="buyerConsolidationName"
+                    type="text"
+                    formControlName="buyerConsolidationName"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="ourOffice">Our Office</label>
+                  <input
+                    id="ourOffice"
+                    type="text"
+                    formControlName="ourOffice"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="profitShare">Profit Share</label>
+                  <input
+                    id="profitShare"
+                    type="number"
+                    formControlName="profitShare"
+                    class="icon-right"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="incomeTaxPAN">Income Tax PAN</label>
+                  <input
+                    id="incomeTaxPAN"
+                    type="text"
+                    formControlName="incomeTaxPAN"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="billingSubledger">Billing Subledger</label>
+                  <input
+                    id="billingSubledger"
+                    type="text"
+                    formControlName="billingSubledger"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="visibility">Visibility</label>
+                  <input
+                    id="visibility"
+                    type="text"
+                    formControlName="visibility"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="termCode">Term Code</label>
+                  <input id="termCode" type="text" formControlName="termCode" />
+                </div>
+                <div class="nice-form-group">
+                  <label for="agentType">Agent Type</label>
+                  <select
+                    id="agentType"
+                    formControlName="agentType"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentDetails
+                          .get('agentType')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentDetails.get('agentType')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let agentType of agentTypes"
+                      [value]="agentType"
+                    >
+                      {{ agentType }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="agreement">Agreement</label>
+                  <input
+                    id="agreement"
+                    type="text"
+                    formControlName="agreement"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="wca">WCA</label>
+                  <input id="wca" type="text" formControlName="wca" />
+                </div>
+                <div class="nice-form-group">
+                  <label for="wcanumber">WCA Number</label>
+                  <input
+                    id="wcanumber"
+                    type="text"
+                    formControlName="wcanumber"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Accounts">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form
+              [formGroup]="createAgentForm_AgentAccounts"
+              (ngSubmit)="onSubmit()"
+            >
+              <section>
+                <div class="nice-form-group">
+                  <label for="location">Location</label>
+                  <select
+                    id="location"
+                    formControlName="location"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentAccounts
+                          .get('location')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentAccounts.get('location')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let location of locations"
+                      [value]="location"
+                    >
+                      {{ location }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="account">Account</label>
+                  <select
+                    id="account"
+                    formControlName="account"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentAccounts
+                          .get('account')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentAccounts.get('account')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option *ngFor="let account of accounts" [value]="account">
+                      {{ account }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="currency">Currency</label>
+                  <select
+                    id="currency"
+                    formControlName="currency"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentAccounts
+                          .get('currency')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentAccounts.get('currency')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let currency of currencies"
+                      [value]="currency"
+                    >
+                      {{ currency }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="visibility">Visibility</label>
+                  <select
+                    id="visibility"
+                    formControlName="visibility"
+                    [ngClass]="{
+                      'invalid-input':
+                        createAgentForm_AgentAccounts
+                          .get('visibility')
+                          ?.hasError('invalidInput') &&
+                        createAgentForm_AgentAccounts.get('visibility')?.touched
+                    }"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let visibility of visibilities"
+                      [value]="visibility"
+                    >
+                      {{ visibility }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="note">Note</label>
+                  <textarea
+                    id="note"
+                    type="text"
+                    formControlName="note"
+                  ></textarea>
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Segment Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form
+              [formGroup]="createAgentForm_AgentSegmentDetails"
+              (ngSubmit)="onSubmit()"
+            >
+              <section>
+                <div class="nice-form-group">
+                  <label for="location">Location</label>
+                  <select id="location" formControlName="location">
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let location of locations"
+                      [value]="location"
+                    >
+                      {{ location }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="segment">Segment</label>
+                  <select id="segment" formControlName="segment">
+                    <option value="" disabled>Please select a value</option>
+                    <option *ngFor="let segment of segments" [value]="segment">
+                      {{ segment }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="salesman">Salesman</label>
+                  <select id="salesman" formControlName="salesman">
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let salesman of salesmen"
+                      [value]="salesman"
+                    >
+                      {{ salesman }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="customerService">Customer Service</label>
+                  <select
+                    id="customerService"
+                    formControlName="customerService"
+                  >
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let customerService of customerServices"
+                      [value]="customerService"
+                    >
+                      {{ customerService }}
+                    </option>
+                  </select>
+                </div>
+                <div class="row gap-2 d-flex flex-row align-items-end">
+                  <div class="nice-form-group col">
+                    <label for="creditLimitDays">Credit Limit Days</label>
+                    <input
+                      type="number"
+                      class="w-full"
+                      formControlName="creditLimitDays"
+                    />
+                  </div>
+                  <div class="nice-form-group col">
+                    <label for="creditLimitAmount">Credit Limit Amount</label>
+                    <input
+                      id="creditLimitAmount"
+                      type="number"
+                      class="w-full"
+                      formControlName="creditLimitAmount"
+                    />
+                  </div>
+                  <div class="nice-form-group col">
+                    <label for="publishedCreditDays"
+                      >Published Credit Days</label
+                    >
+                    <input
+                      id="publishedCreditDays"
+                      type="number"
+                      class="w-full"
+                      formControlName="publishedCreditDays"
+                    />
+                  </div>
+                </div>
+                <div class="nice-form-group">
+                  <label for="contactPerson">Contact Person</label>
+                  <input
+                    id="contactPerson"
+                    type="text"
+                    formControlName="contactPerson"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="agentEmail">Agent Email</label>
+                  <input
+                    id="agentEmail"
+                    type="email"
+                    formControlName="agentEmail"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="operationalEmail">Operational Email</label>
+                  <input
+                    id="operationalEmail"
+                    type="email"
+                    formControlName="operationalEmail"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Bank Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createAgentForm_AgentBankDetails">
+              <section>
+                <div class="nice-form-group">
+                  <label for="currency">Currency</label>
+                  <select id="currency" formControlName="currency">
+                    <option value="" disabled>Please select a value</option>
+                    <option
+                      *ngFor="let currency of currencies"
+                      [value]="currency"
+                    >
+                      {{ currency }}
+                    </option>
+                  </select>
+                </div>
+                <div class="nice-form-group">
+                  <label for="accountNumber">Account Number</label>
+                  <input
+                    id="accountNumber"
+                    type="text"
+                    class="w-full"
+                    formControlName="accountNumber"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="accountName">Account Name</label>
+                  <input
+                    id="accountName"
+                    type="text"
+                    class="w-full"
+                    formControlName="accountName"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="bankName">Bank Name</label>
+                  <input
+                    id="bankName"
+                    type="text"
+                    class="w-full"
+                    formControlName="bankName"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="ibanNumber">IBAN Number</label>
+                  <input
+                    id="ibanNumber"
+                    type="text"
+                    class="w-full"
+                    formControlName="ibanNumber"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="bankSwiftNumber">Bank Swift Number</label>
+                  <input
+                    id="bankSwiftNumber"
+                    type="text"
+                    class="w-full"
+                    formControlName="bankSwiftNumber"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="bankAddress">Bank Address</label>
+                  <input
+                    id="bankAddress"
+                    type="text"
+                    class="w-full"
+                    formControlName="bankAddress"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="bankGuaranteeAccountNumber"
+                    >Bank Guarantee Account Number</label
+                  >
+                  <input
+                    id="bankGuaranteeAccountNumber"
+                    type="text"
+                    class="w-full"
+                    formControlName="bankGuaranteeAccountNumber"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="VAT Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createAgentForm_AgentVATDetails">
+              <section>
+                <div class="nice-form-group">
+                  <label for="vatNumber">VAT Number</label>
+                  <input
+                    id="vatNumber"
+                    type="text"
+                    class="w-full"
+                    formControlName="vatNumber"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="vatExempted">VAT Exempted</label>
+                  <input
+                    id="vatExempted"
+                    type="text"
+                    class="w-full"
+                    formControlName="vatExempted"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="exemptedReason">Exempted Reason</label>
+                  <input
+                    id="exemptedReason"
+                    type="text"
+                    class="w-full"
+                    formControlName="exemptedReason"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Others">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createAgentForm_AgentOthers">
+              <section>
+                <div class="nice-form-group">
+                  <label for="transhipmentEmail">Transhipment Email</label>
+                  <input
+                    id="transhipmentEmail"
+                    type="text"
+                    class="w-full"
+                    formControlName="transhipmentEmail"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="agentEDIReference">Agent EDI Reference</label>
+                  <input
+                    id="agentEDIReference"
+                    type="text"
+                    class="w-full"
+                    formControlName="agentEDIReference"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="agentEDIReferenceEmail"
+                    >Agent EDI Reference Email</label
+                  >
+                  <input
+                    id="agentEDIReferenceEmail"
+                    type="text"
+                    class="w-full"
+                    formControlName="agentEDIReferenceEmail"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="accountOperatingPerson"
+                    >Account Operating Person</label
+                  >
+                  <input
+                    id="accountOperatingPerson"
+                    type="text"
+                    class="w-full"
+                    formControlName="accountOperatingPerson"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="statusExportEmail">Status Export Email</label>
+                  <input
+                    id="statusExportEmail"
+                    type="text"
+                    class="w-full"
+                    formControlName="statusExportEmail"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="statusImportEmail">Status Import Email</label>
+                  <input
+                    id="statusImportEmail"
+                    type="text"
+                    class="w-full"
+                    formControlName="statusImportEmail"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="knownShipper">Known Shipper</label>
+                  <input
+                    id="knownShipper"
+                    type="text"
+                    class="w-full"
+                    formControlName="knownShipper"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="escalationEmail">Escalation Email</label>
+                  <input
+                    id="escalationEmail"
+                    type="text"
+                    class="w-full"
+                    formControlName="escalationEmail"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Reference" styleClass="p-mt-4">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createAgentForm_AgentReference">
+              <section>
+                <div class="nice-form-group">
+                  <label for="referenceCode">Reference Code</label>
+                  <input
+                    id="referenceCode"
+                    type="text"
+                    class="w-full"
+                    formControlName="referenceCode"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="referenceNumber">Reference Number</label>
+                  <input
+                    id="referenceNumber"
+                    type="text"
+                    class="w-full"
+                    formControlName="referenceNumber"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="note">Note</label>
+                  <input
+                    id="note"
+                    type="text"
+                    class="w-full"
+                    formControlName="note"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="EDI Receiver Details" styleClass="p-mt-4">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createAgentForm_AgentEDIReceiverDetails">
+              <section>
+                <div class="nice-form-group">
+                  <label for="receiverID">Receiver ID</label>
+                  <input
+                    id="receiverID"
+                    type="text"
+                    class="w-full"
+                    formControlName="receiverID"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="receiverType">Receiver Type</label>
+                  <input
+                    id="receiverType"
+                    type="text"
+                    class="w-full"
+                    formControlName="receiverType"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Tax Details" styleClass="p-mt-4">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createAgentForm_AgentTaxDetails">
+              <section>
+                <div class="nice-form-group">
+                  <label for="country">Country</label>
+                  <input
+                    id="country"
+                    type="text"
+                    class="w-full"
+                    formControlName="country"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="taxId">Tax Id</label>
+                  <input
+                    id="taxId"
+                    type="text"
+                    class="w-full"
+                    formControlName="taxId"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="taxCode">Tax Code</label>
+                  <input
+                    id="taxCode"
+                    type="text"
+                    class="w-full"
+                    formControlName="taxCode"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="note">Note</label>
+                  <input
+                    id="note"
+                    type="text"
+                    class="w-full"
+                    formControlName="note"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agreement" styleClass="p-mt-4">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createAgentForm_AgentAgreement">
+              <section>
+                <div class="nice-form-group">
+                  <label for="agreementCountry">Agreement Country</label>
+                  <input
+                    id="agreementCountry"
+                    type="text"
+                    class="w-full"
+                    formControlName="agreementCountry"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="agentGroup">Agent Group</label>
+                  <input
+                    id="agentGroup"
+                    type="text"
+                    class="w-full"
+                    formControlName="agentGroup"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="agreementDate">Agreement Date</label>
+                  <input
+                    id="agreementDate"
+                    type="text"
+                    class="w-full"
+                    formControlName="agreementDate"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="expiryDate">Expiry Date</label>
+                  <input
+                    id="expiryDate"
+                    type="text"
+                    class="w-full"
+                    formControlName="expiryDate"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="fileURL">File</label>
+                  <input
+                    id="fileURL"
+                    type="file"
+                    class="w-full"
+                    formControlName="fileURL"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="signedBy">Signed By</label>
+                  <input
+                    id="signedBy"
+                    type="text"
+                    class="w-full"
+                    formControlName="signedBy"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+    <div class="flex justify-content-between">
+      <p-button
+        label="Back"
+        icon="pi pi-arrow-left"
+        (onClick)="decrement()"
+        [outlined]="activeIndex === 0"
+      />
+      <p-button
+        label="Submit"
+        icon="pi pi-arrow-right"
+        iconPos="left"
+        [hidden]="activeIndex !== 9"
+        severity="success"
+      />
+      <p-button
+        label="Next"
+        icon="pi pi-arrow-right"
+        iconPos="right"
+        (onClick)="increment()"
+        [hidden]="activeIndex == 9"
+      />
+    </div>
+  </div>
+</div>

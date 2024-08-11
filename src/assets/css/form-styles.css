@@ -868,7 +868,7 @@ body {
 .demo-page .demo-page-navigation nav {
     position: -webkit-sticky;
     position: sticky;
-    top: 2em;
+    top: 10%;
     background: #fff;
     padding: 0.5em;
     border-radius: 0.75rem;
@@ -1072,4 +1072,3 @@ details summary::marker {
 details summary::-webkit-details-marker {
     display: none;
 }
-

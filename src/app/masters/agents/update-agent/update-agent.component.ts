@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'app-create-agent',
-    templateUrl: './create-agent.component.html',
-    styleUrl: './create-agent.component.css'
+  selector: 'app-update-agent',
+  templateUrl: './update-agent.component.html',
+  styleUrl: './update-agent.component.css'
 })
-export class CreateAgentComponent implements OnInit {
+export class UpdateAgentComponent implements OnInit {
     constructor(private fb: FormBuilder) { }
 
     createAgentForm_AgentDetails!: FormGroup;
