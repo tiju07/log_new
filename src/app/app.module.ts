@@ -38,6 +38,7 @@ import { ViewAllActionsComponent } from './masters/actions/view-all-actions/view
 import { CreateAgentComponent } from './masters/agents/create-agent/create-agent.component';
 import { UpdateAgentComponent } from './masters/agents/update-agent/update-agent.component';
 import { ViewAllAgentsComponent } from './masters/agents/view-all-agents/view-all-agents.component';
+import { ViewSingleAgentComponent } from './masters/agents/view-single-agent/view-single-agent.component';
 
 
 
@@ -55,7 +56,8 @@ import { ViewAllAgentsComponent } from './masters/agents/view-all-agents/view-al
         ViewAllActionsComponent,
         CreateAgentComponent,
         UpdateAgentComponent,
-        ViewAllAgentsComponent
+        ViewAllAgentsComponent,
+        ViewSingleAgentComponent
     ],
     imports: [
         BrowserModule,

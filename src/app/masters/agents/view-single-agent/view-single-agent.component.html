@@ -1,0 +1,470 @@
+<div class="flex justify-content-center p-3">
+  <div class="card">
+    <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
+      <p-tabPanel header="Agent Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Carrier Rate ID</div>
+                <div class="card-value">{{ agent.agentID }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Name</div>
+                <div class="card-value">{{ agent.name }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Country</div>
+                <div class="card-value">{{ agent.country }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Group</div>
+                <div class="card-value">{{ agent.group }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Address</div>
+                <div class="card-value">{{ agent.address }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Buyer Consolidation Name</div>
+                <div class="card-value">{{ agent.buyerConsolidationName }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Our Office</div>
+                <div class="card-value">{{ agent.ourOffice }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Profit Share</div>
+                <div class="card-value">{{ agent.profitShare }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Income Tax PAN</div>
+                <div class="card-value">{{ agent.incomeTaxPAN }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Billing Subledger</div>
+                <div class="card-value">{{ agent.billingSubledger }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Visibility</div>
+                <div class="card-value">{{ agent.visibility }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Term Code</div>
+                <div class="card-value">{{ agent.termCode }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agent Type</div>
+                <div class="card-value">{{ agent.agentType }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Note</div>
+                <div class="card-value">{{ agent.note }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agreement</div>
+                <div class="card-value">{{ agent.agreement }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">WCA</div>
+                <div class="card-value">{{ agent.wca }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">WCA Number</div>
+                <div class="card-value">{{ agent.wcanumber }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent Accounts">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Location</div>
+                <div class="card-value">{{ agent.location }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Account</div>
+                <div class="card-value">{{ agent.account }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Currency</div>
+                <div class="card-value">{{ agent.currency }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Visibility</div>
+                <div class="card-value">{{ agent.visibility }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Note</div>
+                <div class="card-value">{{ agent.note }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent Segment Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Location</div>
+                <div class="card-value">{{ agent.location }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Segment</div>
+                <div class="card-value">{{ agent.segment }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Salesman</div>
+                <div class="card-value">{{ agent.salesman }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Customer Service</div>
+                <div class="card-value">{{ agent.customerService }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Credit Limit Days</div>
+                <div class="card-value">{{ agent.creditLimitDays }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Credit Limit Amount</div>
+                <div class="card-value">{{ agent.creditLimitAmount }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Published Credit Days</div>
+                <div class="card-value">{{ agent.publishedCreditDays }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Contact Person</div>
+                <div class="card-value">{{ agent.contactPerson }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agent Email</div>
+                <div class="card-value">{{ agent.agentEmail }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Operational Email</div>
+                <div class="card-value">{{ agent.operationalEmail }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent Bank Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Currency</div>
+                <div class="card-value">{{ agent.currency }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Account Number</div>
+                <div class="card-value">{{ agent.accountNumber }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Account Name</div>
+                <div class="card-value">{{ agent.accountName }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Bank Name</div>
+                <div class="card-value">{{ agent.bankName }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">IBAN Number</div>
+                <div class="card-value">{{ agent.ibanNumber }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Bank Swift Number</div>
+                <div class="card-value">{{ agent.bankSwiftNumber }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Bank Address</div>
+                <div class="card-value">{{ agent.bankAddress }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Bank Guarantee Account Number</div>
+                <div class="card-value">
+                  {{ agent.bankGuaranteeAccountNumber }}
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent VAT Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">VAT Number</div>
+                <div class="card-value">{{ agent.vatNumber }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">VAT Exempted</div>
+                <div class="card-value">{{ agent.vatExempted }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Exempted Reason</div>
+                <div class="card-value">{{ agent.exemptedReason }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent Others">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Transhipment Email</div>
+                <div class="card-value">{{ agent.transhipmentEmail }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agent EDI Reference</div>
+                <div class="card-value">{{ agent.agentEDIReference }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agent EDI Reference Email</div>
+                <div class="card-value">{{ agent.agentEDIReferenceEmail }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Account Operating Person</div>
+                <div class="card-value">{{ agent.accountOperatingPerson }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Status Export Email</div>
+                <div class="card-value">{{ agent.statusExportEmail }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Status Import Email</div>
+                <div class="card-value">{{ agent.statusImportEmail }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Known Shipper</div>
+                <div class="card-value">{{ agent.knownShipper }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Escalation Email</div>
+                <div class="card-value">{{ agent.escalationEmail }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent Reference">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Reference Code</div>
+                <div class="card-value">{{ agent.referenceCode }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Reference Number</div>
+                <div class="card-value">{{ agent.referenceNumber }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Note</div>
+                <div class="card-value">{{ agent.note }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent EDI Receiver Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Receiver ID</div>
+                <div class="card-value">{{ agent.receiverID }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Receiver Type</div>
+                <div class="card-value">{{ agent.receiverType }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent Tax Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Country</div>
+                <div class="card-value">{{ agent.country }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Tax ID</div>
+                <div class="card-value">{{ agent.taxId }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Tax Code</div>
+                <div class="card-value">{{ agent.taxCode }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Note</div>
+                <div class="card-value">{{ agent.note }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Agent Agreement">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agreement Country</div>
+                <div class="card-value">{{ agent.agreementCountry }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agent Group</div>
+                <div class="card-value">{{ agent.agentGroup }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Agreement Date</div>
+                <div class="card-value">{{ agent.agreementDate }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Expiry Date</div>
+                <div class="card-value">{{ agent.expiryDate }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">File URL</div>
+                <div class="card-value">{{ agent.fileURL }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">File Name</div>
+                <div class="card-value">{{ agent.fileName }}</div>
+              </div>
+            </section>
+            <section>
+              <div class="card-row">
+                <div class="card-label">Signed By</div>
+                <div class="card-value">{{ agent.signedBy }}</div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>

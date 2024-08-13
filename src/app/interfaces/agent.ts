@@ -1,4 +1,5 @@
 export interface Agent {
+    agentID?: string;
     name?: string;
     country?: string;
     group?: string;

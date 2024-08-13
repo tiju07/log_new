@@ -193,4 +193,8 @@ export class AgentsService {
     getAllAgents(): Agent[] {
         return this.agents;
     }
+
+    getAgent(): Agent {
+        return this.agents[0];
+    }
 }
