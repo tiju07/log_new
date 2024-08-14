@@ -13,15 +13,15 @@ export class CarrierRatesService {
             carrierRateID: "1",
             carrier: {
                 carrierID: "1",
-                name: "test"
+                carrierName: "test"
             },
             charge: {
                 chargeID: "1",
-                name: "test"
+                chargeName: "test"
             },
             currency: {
                 currencyID: "1",
-                name: "test"
+                currencyName: "test"
             },
             unit: "test",
             measurementType: "test",
@@ -39,15 +39,15 @@ export class CarrierRatesService {
             carrierRateID: `${i + 2}`,
             carrier: {
                 carrierID: `${i + 2}`,
-                name: `test ${i + 2}`
+                carrierName: `test ${i + 2}`
             },
             charge: {
                 chargeID: `${i + 2}`,
-                name: `test ${i + 2}`
+                chargeName: `test ${i + 2}`
             },
             currency: {
                 currencyID: `${i + 2}`,
-                name: `test ${i + 2}`
+                currencyName: `test ${i + 2}`
             },
             unit: `test ${i + 2}`,
             measurementType: `test ${i + 2}`,

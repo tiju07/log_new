@@ -1,0 +1,318 @@
+<div class="flex justify-content-center p-3 card">
+  <div class="card">
+    <p-tabView [(activeIndex)]="activeIndex" [scrollable]="true">
+      <p-tabPanel header="Carrier Details">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form
+              [formGroup]="createCarrierForm_CarrierDetails"
+              (ngSubmit)="onSubmit()"
+            >
+              <section>
+                <div class="nice-form-group">
+                  <label for="carrierID">Carrier ID</label>
+                  <input
+                    id="carrierID"
+                    type="text"
+                    formControlName="carrierID"
+                    name="carrierID"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="carrierName">Carrier Name</label>
+                  <input
+                    id="carrierName"
+                    type="text"
+                    formControlName="carrierName"
+                    name="carrierName"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="carrierType">Carrier Type</label>
+                  <input
+                    id="carrierType"
+                    type="text"
+                    formControlName="carrierType"
+                    name="carrierType"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="type">Type</label>
+                  <input id="type" type="text" formControlName="type" />
+                </div>
+                <div class="nice-form-group">
+                  <label for="USCustomsSCAC">US Customs SCAC</label>
+                  <input
+                    id="USCustomsSCAC"
+                    type="text"
+                    formControlName="USCustomsSCAC"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="carrierNumber">Carrier Number</label>
+                  <input
+                    id="carrierNumber"
+                    type="text"
+                    formControlName="carrierNumber"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="SCAC">SCAC</label>
+                  <input id="SCAC" type="text" formControlName="SCAC" />
+                </div>
+                <div class="nice-form-group">
+                  <label for="IATACarrier">IATA Carrier</label>
+                  <input
+                    id="IATACarrier"
+                    type="text"
+                    formControlName="IATACarrier"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="EDILineCode">EDI Line Code</label>
+                  <input
+                    id="EDILineCode"
+                    type="text"
+                    formControlName="EDILineCode"
+                  />
+                </div>
+                <div class="nice-form-group">
+                  <label for="PANNumber">PAN Number</label>
+                  <input
+                    id="PANNumber"
+                    type="text"
+                    formControlName="PANNumber"
+                  />
+                </div>
+              </section>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Carrier Addresses">
+        <div class="demo-page">
+          <main class="demo-page-content">
+            <form [formGroup]="createCarrierForm_CarrierAddresses" class="mb-4">
+                <div formArrayName="addresses">
+                    <div
+                    *ngFor="let address of addresses; let i = index"
+                    [formGroupName]="i"
+                    >
+                    <section>
+                      <p-button
+                      *ngIf="addresses.length > 1"
+                      label="Remove"
+                        (onClick)="removeAddress(i)"
+                        icon="pi pi-times"
+                        severity="danger"
+                        styleClass="w-full"
+                      ></p-button>
+                    <!-- <div class="nice-form-group">
+                      <label for="addressID">Address ID:</label>
+                      <input
+                        id="addressID"
+                        formControlName="addressID"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="carrierID">Carrier ID:</label>
+                      <input
+                        id="carrierID"
+                        formControlName="carrierID"
+                        type="text"
+                      />
+                    </div> -->
+                    <div class="nice-form-group">
+                      <label for="location">Location:</label>
+                      <input
+                        id="location"
+                        formControlName="location"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="address">Address:</label>
+                      <input
+                        id="address"
+                        formControlName="address"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="countryID">Country ID:</label>
+                      <input
+                        id="countryID"
+                        formControlName="countryID"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="ediType">EDI Type:</label>
+                      <input
+                        id="ediType"
+                        formControlName="ediType"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="win">WIN:</label>
+                      <input id="win" formControlName="win" type="text" />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="eAWB">eAWB:</label>
+                      <input id="eAWB" formControlName="eAWB" type="text" />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="contact">Contact:</label>
+                      <input
+                        id="contact"
+                        formControlName="contact"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="phone">Phone:</label>
+                      <input id="phone" formControlName="phone" type="text" />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="exportDetentionDays"
+                        >Export Detention Days:</label
+                      >
+                      <input
+                        id="exportDetentionDays"
+                        formControlName="exportDetentionDays"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="importDetentionDays"
+                        >Import Detention Days:</label
+                      >
+                      <input
+                        id="importDetentionDays"
+                        formControlName="importDetentionDays"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="fax">Fax:</label>
+                      <input id="fax" formControlName="fax" type="text" />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="email">Email:</label>
+                      <input id="email" formControlName="email" type="text" />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="carrierAccountID">Carrier Account ID:</label>
+                      <input
+                        id="carrierAccountID"
+                        formControlName="carrierAccountID"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="carrierAgentAccount"
+                        >Carrier Agent Account:</label
+                      >
+                      <input
+                        id="carrierAgentAccount"
+                        formControlName="carrierAgentAccount"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="brokerage">Brokerage:</label>
+                      <input
+                        id="brokerage"
+                        formControlName="brokerage"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="freightMinimumAmount"
+                        >Freight Minimum Amount:</label
+                      >
+                      <input
+                        id="freightMinimumAmount"
+                        formControlName="freightMinimumAmount"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="ourAccountNumber">Our Account Number:</label>
+                      <input
+                        id="ourAccountNumber"
+                        formControlName="ourAccountNumber"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="spotNumber">Spot Number:</label>
+                      <input
+                        id="spotNumber"
+                        formControlName="spotNumber"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="airWaybillAccountingNote"
+                        >Air Waybill Accounting Note:</label
+                      >
+                      <input
+                        id="airWaybillAccountingNote"
+                        formControlName="airWaybillAccountingNote"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="paidToName">Paid To Name:</label>
+                      <input
+                        id="paidToName"
+                        formControlName="paidToName"
+                        type="text"
+                      />
+                    </div>
+                    <div class="nice-form-group">
+                      <label for="note">Note:</label>
+                      <input id="note" formControlName="note" type="text" />
+                    </div>
+                </section>
+                  </div>
+                </div>
+            <p-button
+              label="Add"
+              (onClick)="addAddress()"
+              icon="pi pi-plus"
+              styleClass="p-mt-4 w-full"
+            ></p-button>
+            </form>
+          </main>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+    <div class="flex justify-content-between">
+        <p-button
+          label="Back"
+          icon="pi pi-arrow-left"
+          (onClick)="decrement()"
+          [outlined]="activeIndex === 0"
+        />
+        <p-button
+          label="Submit"
+          icon="pi pi-arrow-right"
+          iconPos="left"
+          [hidden]="activeIndex !== 1"
+          severity="success"
+          (onClick)="onSubmit()"
+        />
+        <p-button
+          label="Next"
+          icon="pi pi-arrow-right"
+          iconPos="right"
+          (onClick)="increment()"
+          [hidden]="activeIndex == 1"
+        />
+      </div>
+  </div>
+</div>

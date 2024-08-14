@@ -78,6 +78,9 @@
               "buildTarget": "logistics:build:development"
             }
           },
+          "options": {
+            "port": 5681
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

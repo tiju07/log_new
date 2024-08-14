@@ -11,6 +11,7 @@ import { CreateAgentComponent } from './masters/agents/create-agent/create-agent
 import { UpdateAgentComponent } from './masters/agents/update-agent/update-agent.component';
 import { ViewAllAgentsComponent } from './masters/agents/view-all-agents/view-all-agents.component';
 import { ViewSingleAgentComponent } from './masters/agents/view-single-agent/view-single-agent.component';
+import { CreateCarrierComponent } from './masters/carriers/create-carrier/create-carrier.component';
 
 const routes: Routes = [
     { path: 'carrier-rates', component: ViewAllCarrierRatesComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     { path: 'agents/view/:id', component: ViewSingleAgentComponent },
     { path: 'agents/create', component: CreateAgentComponent },
     { path: 'agents/update/:id', component: UpdateAgentComponent },
+    { path: 'carriers/create', component: CreateCarrierComponent },
     { path: "**", redirectTo: "", pathMatch: "full" }
 ];
 
